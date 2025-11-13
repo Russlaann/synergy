@@ -15,6 +15,15 @@ class CashRegister:
             raise ValueError("Не достаточно денег в кассе")
         self.money -= x
 
+print('Задача 1')
+print()
+
+register1 = CashRegister()
+register1.top_up(50_000)                                    # пополнили на 50 000
+print(f'В кассе {register1.count_1000()} тысяч рублей')     # показали 50
+register1.take_away(20_000)                                 # забрали 20 000
+print(f'В кассе {register1.count_1000()} тысяч рублей')     # показали сколько осталось (30)
+
 
 # Задание 2
 
@@ -52,3 +61,20 @@ class Turtle:
         moves_y = (dy + self.s - 1) // self.s
 
         return moves_x + moves_y
+
+print()
+print('-' * 30)
+print('Задача 2')
+print()
+
+turt1 = Turtle(0, 0, 2)    # ставим экземпляр черепашки на координаты 10, 10. Эта черепаха будет ходить по 2 клетки
+turt1.go_up()                         # ходим на верх
+turt1.go_right()
+turt1.go_right()                      # два раза направо
+turt1.go_down()
+turt1.go_down()
+turt1.go_down()                       # три раза вниз
+turt1.go_left()
+turt1.go_left()
+turt1.go_left()                       # три раза влево
+print(f'Расстояние от начала координат (0, 0) до черепашки {turt1.count_moves(0,0)} шагов')
